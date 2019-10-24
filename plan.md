@@ -1,7 +1,9 @@
-General plan for UI code layout and design
+## General plan for UI code layout and design
 
 The directory is as follows:
+
 /files
+
 	/index.html
 	/styles.css
 	/pages
