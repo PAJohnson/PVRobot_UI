@@ -16,7 +16,46 @@ body{
 	background-repeat: no-repeat;
 	background-position: center center;
 }
-.container{
+.login{
+	display: block;
+	text-align: center;
+	max-width: 400px;
+	font-family: system-ui;
+}
+.login_form{
 	margin: 0;
-	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+.login_form h1{
+	color: white;
+}
+
+input[type=text], input[type=password]{
+	width: 100%;
+	padding: 15px;
+	border: none;
+	background: transparent;
+	font-family: system-ui;
+	font-weight: bold;
+	color: white;
+}
+.btn{
+	width: 75%;
+	height: 10%;
+	border-radius: 15px;
+	border: none;
+	background-color: white;
+	color: black;
+	padding: 1em;
+	margin: 1em;
+	font-family: system-ui;
+	font-weight: bold;
+}
+.btn:hover{
+	background-color: grey;
 }
