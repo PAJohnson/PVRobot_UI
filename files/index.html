@@ -4,19 +4,18 @@
 		<meta charset="utf-8">
 		<title>PVRobot User Interface</title>
 		<link rel="stylesheet" href="styles.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
-			$(document).ready(function(){
-				$("#Button_1").click(function(){
-					$("#frame_inner").attr("src", "pages/home_page/home.html");
+			window.onload = function(){
+				document.getElementById('Button_1').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','pages/home_page/home.html');
 				});
-				$("#Button_2").click(function(){
-					$("#frame_inner").attr("src", "https://www.wikipedia.org");
+				document.getElementById('Button_2').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','https://www.wikipedia.org');
 				});
-				$("#Button_3").click(function(){
-					$("#frame_inner").attr("src", "https://www.raysweather.com");
+				document.getElementById('Button_3').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','https://www.raysweather.com');
 				});
-			});
+			}
 		</script>
 	</head>
 	<body> 
