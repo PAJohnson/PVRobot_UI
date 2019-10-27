@@ -39,9 +39,11 @@ input[type=text], input[type=password]{
 	width: 100%;
 	padding: 15px;
 	border: none;
+	border-bottom: 2px solid white;
 	background: transparent;
 	font-family: system-ui;
 	font-weight: bold;
+	font-size: 1.5em;
 	color: white;
 }
 .btn{
@@ -51,10 +53,11 @@ input[type=text], input[type=password]{
 	border: none;
 	background-color: white;
 	color: black;
-	padding: 1em;
-	margin: 1em;
+	padding: 0.5em;
+	margin: 0.5em;
 	font-family: system-ui;
 	font-weight: bold;
+	font-size: 1.5em
 }
 .btn:hover{
 	background-color: grey;

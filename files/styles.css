@@ -22,7 +22,7 @@ html, body {
 }
 
 .left_panel{
-	background-color: #1A1A1A;
+	background-color: #636a6e;
 	width: 20%;
 	height: 100%;
 	min-height: 100%;
@@ -37,7 +37,7 @@ html, body {
 }
 
 .right_panel{
-	background-color: #1A1A1A;
+	background-color: #636a6e;
 	width: 20%;
 	height: 100%;
 	min-height: 100%;
@@ -47,7 +47,7 @@ html, body {
 }
 
 .left_panel button, .right_panel button{
-	background-color: #7F7F7F;
+	background-color: #474c4f;
 	color: white;
 	list-style: none;
 	text-align: center;
@@ -64,9 +64,9 @@ html, body {
 }
 
 .left_panel button:hover{
-	background-color: #4D4D4D;
+	background-color: #2E3133;
 }
 
 .right_panel button:hover{
-	background-color: #4D4D4D;
+	background-color: #2E3133;
 }
