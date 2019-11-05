@@ -13,17 +13,17 @@
 					document.getElementById('frame_inner').setAttribute('src','pages/map_page/map_page.html');
 				});
 				document.getElementById('Button_3').addEventListener('click', ()=>{
-					document.getElementById('frame_inner').setAttribute('src','https://www.raysweather.com');
+					document.getElementById('left_panel').style.display = "none";
 				});
 			}
 		</script>
 	</head>
 	<body> 
 		<div class="page">
-			<section class="left_panel">
+			<section class="left_panel" id="left_panel">
 				<button id="Button_1">Home</button>
 				<button id="Button_2">Map Page</button>
-				<button id="Button_3">Weather</button>
+				<button id="Button_3">invisible</button>
 			</section>
 		
 			<section class="frame">
