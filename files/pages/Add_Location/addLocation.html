@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>PVRobot User Interface</title>
+		<link rel="stylesheet" href="styles.css">
+		<script>
+			window.onload = function(){
+				document.getElementById('Button_1').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','pages/home_page/home.html');
+				});
+				document.getElementById('Button_2').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','pages/map_page/map_page.html');
+				});
+				document.getElementById('Button_3').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','https://www.raysweather.com');
+				});
+			}
+		</script>
+	</head>
+	<body> 
+		<div class="page">
+		
+			<section class="frame"><!-- this is the part that changes with a click-->
+				<iframe id="frame_inner" src="pages/home_page/home.html"></iframe>
+			</section>
+		
+			<section class="right_panel">
+				<button id="Button_4">Button 4</button>
+				<button id="Button_5">Button 5</button>
+				<button id="Button_6">Button 6</button>
+			</section>
+		</div>
+	</body>
+</html>

@@ -12,11 +12,19 @@
 				document.getElementById('Button_2').addEventListener('click', ()=>{
 					document.getElementById('frame_inner').setAttribute('src','pages/map_page/map_page.html');
 				});
+				
 				document.getElementById('Button_3').addEventListener('click', ()=>{
 					document.getElementById('left_panel').style.display = "none";
+					document.getElementById('frame_inner').setAttribute('src','pages/Add_Point/add_point.html');
 				});
 				document.getElementById('Button_4').addEventListener('click', ()=>{
+					document.getElementById('left_panel').style.display = "none";
+				});
+				document.getElementById('Button_5').addEventListener('click', ()=>{
 					document.getElementById('left_panel').style.display = "flex";
+				});
+				document.getElementById('Button_7').addEventListener('click', ()=>{
+					document.getElementById('frame_inner').setAttribute('src','pages/Dashboard/dashboard.html');
 				});
 			}
 		</script>
@@ -24,9 +32,11 @@
 	<body> 
 		<div class="page">
 			<section class="left_panel" id="left_panel">
+				
 				<button id="Button_1">Home</button>
 				<button id="Button_2">Map Page</button>
-				<button id="Button_3">invisible</button>
+				<button id="Button_3">Add Drop</button><!-- this was invisable-->
+				<button id ="Button_4">Delete Drop</button> 
 			</section>
 		
 			<section class="frame">
@@ -34,9 +44,11 @@
 			</section>
 		
 			<section class="right_panel">
-				<button id="Button_4">visible</button>
-				<button id="Button_5">Button 5</button>
-				<button id="Button_6">Button 6</button>
+				<button id="Button_5">Geo fence</button>
+				<button id="Button_6">Live View</button>
+				<button id="Button_7">Dashboard</button>
+				<button id ="Button_8">Settings</button>
+				
 			</section>
 		</div>
 	</body>

@@ -47,6 +47,7 @@ html, body {
 }
 
 .left_panel button, .right_panel button{
+	text-align: justify;
 	background-color: #474c4f;
 	color: white;
 	list-style: none;
