@@ -29,7 +29,7 @@
 		</style>
 		<script>
 			window.onload = function (){
-				var my_interval = setInterval(update_fcn,1000);
+				var my_interval = setInterval(update_fcn,100);
 				var connection;
 				var battery;
 				var latitude;
@@ -38,12 +38,8 @@
 				var orientation;
 				
 				function update_fcn(){
-					document.getElementById("Connection").innerHTML = connection;
-					document.getElementById("Battery").innerHTML = battery;
-					document.getElementById("Latitude").innerHTML = latitude;
-					document.getElementById("Longitude").innerHTML = longitude;
-					document.getElementById("Distance").innerHTML = distance;
-					document.getElementById("Orientation").innerHTML = orientation;
+					update_dash();
+					
 					fetch("/dash/connection.json")
 					.then(response => response.json())
 					.then(response => {
@@ -85,6 +81,14 @@
 						orientation = response;
 						console.log("in " + data);
 					})				
+				}
+				function update_dash(){
+					document.getElementById("Connection").innerHTML = connection;
+					document.getElementById("Battery").innerHTML = battery;
+					document.getElementById("Latitude").innerHTML = latitude;
+					document.getElementById("Longitude").innerHTML = longitude;
+					document.getElementById("Distance").innerHTML = distance;
+					document.getElementById("Orientation").innerHTML = orientation;
 				}
 			}
 		</script>

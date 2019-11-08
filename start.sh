@@ -1,5 +1,5 @@
 #!/bin/bash
 
-python server.py DEBUG
+kill $(ps aux | grep '[s]erver.py')
 
-x-www-browser '0.0.0.0:4996/index.html'
+./server.py DEBUG & sleep 2 && xdg-open 'http://0.0.0.0:5000/index.html'
