@@ -6,24 +6,38 @@
 		<link rel="stylesheet" href="styles.css">
 		<script>
 			window.onload = function(){
-				document.getElementById('Button_1').addEventListener('click', ()=>{
-					document.getElementById('frame_inner').setAttribute('src','pages/home_page/home.html');
+				document.getElementById('Button_1').addEventListener('click', ()=>{// this is adding a drop point
+					alert("Drag the marker to drop location. When finshed click the map page on right panel");
+					document.getElementById('left_panel').style.display = "none";
+					document.getElementById('frame_inner').setAttribute('src','pages/Add_Drop/add_drop.html');
+					
 				});
-				document.getElementById('Button_2').addEventListener('click', ()=>{
-					document.getElementById('frame_inner').setAttribute('src','pages/map_page/map_page.html');
+				document.getElementById('Button_2').addEventListener('click', ()=>{// this is removing a drop point
+					alert("Select the drop to delete by clicking it twice. When finished click the map page on right panel");
+					document.getElementById('left_panel').style.display = "none";
+					document.getElementById('frame_inner').setAttribute('src','pages/Delete_Drop/delete_drop.html');
+					
 				});
 				
-				document.getElementById('Button_3').addEventListener('click', ()=>{
+				document.getElementById('Button_3').addEventListener('click', ()=>{ // this is for changing the geo fence
+					alert("Input the Lat/Long for the corners of the Geo Fence");
 					document.getElementById('left_panel').style.display = "none";
-					document.getElementById('frame_inner').setAttribute('src','pages/Add_Point/add_point.html');
+					
 				});
-				document.getElementById('Button_4').addEventListener('click', ()=>{
+				document.getElementById('Button_4').addEventListener('click', ()=>{// this is to make the crawler return to the loading station
+					alert("Crawler's Returning");
 					document.getElementById('left_panel').style.display = "none";
+					
 				});
-				document.getElementById('Button_5').addEventListener('click', ()=>{
+				document.getElementById('Button_5').addEventListener('click', ()=>{// brings up the map page
 					document.getElementById('left_panel').style.display = "flex";
+					document.getElementById('frame_inner').setAttribute('src','pages/Map_Page/map_page.html');
 				});
-				document.getElementById('Button_7').addEventListener('click', ()=>{
+				document.getElementById('Button_6').addEventListener('click', ()=>{// brings up the live view
+					document.getElementById('frame_inner').setAttribute('src','pages/Live_View/live_view.html');
+				});
+				
+				document.getElementById('Button_7').addEventListener('click', ()=>{// brings up the dashboard
 					document.getElementById('frame_inner').setAttribute('src','pages/Dashboard/dashboard.html');
 				});
 			}
@@ -33,18 +47,21 @@
 		<div class="page">
 			<section class="left_panel" id="left_panel">
 				
-				<button id="Button_1">Home</button>
-				<button id="Button_2">Map Page</button>
-				<button id="Button_3">Add Drop</button><!-- this was invisable-->
-				<button id ="Button_4">Delete Drop</button> 
+				<h1>ACTIONS</h1>
+				<button id="Button_1">Add Drop</button>
+				<button id="Button_2">Delete Drop</button>
+				<button id="Button_3">Geo Fence</button>
+				<button id ="Button_4">Crawler Return</button><!-- Need to right code for this to work--> 
 			</section>
 		
 			<section class="frame">
-				<iframe id="frame_inner" src="pages/home_page/home.html"></iframe>
+				<iframe id="frame_inner" src="pages/Map_Page/map_page.html"></iframe>
 			</section>
 		
 			<section class="right_panel">
-				<button id="Button_5">Geo fence</button>
+			
+				<h1>SCREENS</h1>
+				<button id="Button_5">Map Page</button>
 				<button id="Button_6">Live View</button>
 				<button id="Button_7">Dashboard</button>
 				<button id ="Button_8">Settings</button>

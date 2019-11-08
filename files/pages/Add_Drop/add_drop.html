@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset='utf-8' />
@@ -39,23 +38,65 @@ var coordinates = document.getElementById('coordinates');
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11',
-center: [-82.56628055745645, 35.61569015994718], // starting position [lng, lat]
-			zoom: 10 // starting zoom
+center: [-82.566081, 35.616759],
+zoom: 18
 });
- 
-var marker = new mapboxgl.Marker({
+
+var marker1 = new mapboxgl.Marker({      
 draggable: true
 })
-.setLngLat(-82.56628055745645, 35.61569015994718)
+.setLngLat([-82.566081, 35.616759])
 .addTo(map);
  
+ 
+ var marker2 = new mapboxgl.Marker({    
+draggable: true
+})
+.setLngLat([-82.566879, 35.615992])
+.addTo(map);
+
+
+var marker3 = new mapboxgl.Marker({    
+draggable: true
+})
+.setLngLat([-82.565706, 35.615243])
+.addTo(map);
+
+var marker4 = new mapboxgl.Marker({    
+draggable: true
+})
+.setLngLat([-82.564857, 35.615999])
+.addTo(map);
+
 function onDragEnd() {
-var lngLat = marker.getLngLat();
+var lngLat = marker1.getLngLat();
+coordinates.style.display = 'block';
+coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+}
+
+function onDragEnd() {
+var lngLat = marker2.getLngLat();
+coordinates.style.display = 'block';
+coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+}
+
+function onDragEnd() {
+var lngLat = marker3.getLngLat();
+coordinates.style.display = 'block';
+coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+}
+
+function onDragEnd() {
+var lngLat = marker4.getLngLat();
 coordinates.style.display = 'block';
 coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 }
  
-marker.on('dragend', onDragEnd);
+marker1.on('dragend', onDragEnd);
+marker2.on('dragend', onDragEnd);
+marker3.on('dragend', onDragEnd);
+marker4.on('dragend', onDragEnd);
+
 </script>
  
 </body>
