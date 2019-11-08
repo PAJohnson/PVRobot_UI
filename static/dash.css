@@ -1,0 +1,25 @@
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+.dash {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0;
+}
+
+.col_1 {
+	flex-direction: column;
+	margin: auto;
+	justify-content: center;
+}
+
+.col_1 div{
+	border: solid black;
+	margin: 10px;
+	flex-grow: 1;
+}
+
