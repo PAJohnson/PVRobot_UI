@@ -22,7 +22,6 @@ html, body {
 }
 
 .left_panel{
-
 	background-color: #636a6e;
 	width: 20%;
 	height: 100%;
@@ -30,13 +29,16 @@ html, body {
 	display: flex;
 	flex-direction: column;
 }
-.left_panel	h1 {
+
+.left_panel div, .right_panel div {
 	font-size:2.5em;
 	text-align: center;
 	text-transform: uppercase;
-	color: Black;
+	color: white;
+	font-family: system-ui;
+	font-weight: bold;
+	padding: 5% 0 0 0;
 }
-
 
 .frame {
 	flex-grow: 1;
@@ -52,13 +54,6 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	margin-right: 0;
-}
-
-.right_panel h1 {
-	font-size:2.5em;
-	text-align: center;
-	text-transform: uppercase;
-	color: Black;
 }
 
 .left_panel button, .right_panel button{

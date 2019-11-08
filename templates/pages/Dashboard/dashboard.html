@@ -1,47 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-html, body{
-	width:100%;
-    height:100%;
-   margin:0;
-}
-.flex-container {
-  width:100%;
-  height:100%;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: Black;
-}
-
-.flex-container > div {
-  background-color: White;
-  width: 46%;
-  margin: 2%;
-  text-align: center;
-  line-height: 60%;
-  font-size: 30px;
- 
-
-}
-
-</style>
-</head>
-<body>
-
-
-<div class="flex-container">
-  <div>Connection
-  </div>
-  <div>Battery</div>
-  <div>Latitude</div>  
-  <div>Longitude</div>
-  <div>Distance</div>
-  <div>Orientaion</div>  
-  
-</div>
-
-
-</body>
+	<head>
+		<style>
+			html, body{
+				width:100%;
+				height:100%;
+				margin:0;
+			}
+			.grid-container {
+				grid-template-columns: auto auto;
+				grid-template-rows: auto auto auto;
+				display: grid;
+				background-color: White;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+			}
+			.cell{
+				background-color: White;
+				border: solid black;
+				padding: 10px;
+				text-align: center;
+				font-size: 30px;
+			}
+			div{
+				font-family: system-ui;
+			}
+		</style>
+		<script>
+			window.onload = function (){
+				var my_interval = setInterval(update_fcn,1000);
+				var connection;
+				var battery;
+				var latitude;
+				var longitude;
+				var distance
+				var orientation;
+				
+				function update_fcn(){
+					document.getElementById("Connection").innerHTML = connection;
+					document.getElementById("Battery").innerHTML = battery;
+					document.getElementById("Latitude").innerHTML = latitude;
+					document.getElementById("Longitude").innerHTML = longitude;
+					document.getElementById("Distance").innerHTML = distance;
+					document.getElementById("Orientation").innerHTML = orientation;
+					fetch("/dash/connection.json")
+					.then(response => response.json())
+					.then(response => {
+						connection = response;
+						console.log("in " + data);
+					})
+					
+					fetch("/dash/battery.json")
+					.then(response => response.json())
+					.then(response => {
+						battery = response;
+						console.log("in " + data);
+					})
+					
+					fetch("/dash/latitude.json")
+					.then(response => response.json())
+					.then(response => {
+						latitude = response;
+						console.log("in " + data);
+					})
+					
+					fetch("/dash/longitude.json")
+					.then(response => response.json())
+					.then(response => {
+						longitude = response;
+						console.log("in " + data);
+					})
+					
+					fetch("/dash/distance.json")
+					.then(response => response.json())
+					.then(response => {
+						distance = response;
+						console.log("in " + data);
+					})
+					
+					fetch("/dash/orientation.json")
+					.then(response => response.json())
+					.then(response => {
+						orientation = response;
+						console.log("in " + data);
+					})				
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="grid-container">
+				<div class="cell">
+					<p>Connection</p>
+					<div id="Connection"></div>
+				</div>
+				<div class="cell">
+					<p>Battery</p>
+					<div id="Battery"></div>
+				</div>
+				<div class="cell">
+					<p>Latitude</p>
+					<div id="Latitude"></div>
+				</div>
+				<div class="cell">
+					<p>Longitude</p>
+					<div id="Longitude"></div>
+				</div>
+				<div class="cell">
+					<p>Distance</p>
+					<div id="Distance"></div>
+				</div>
+				<div class="cell">
+					<p>Orientation</p>
+					<div id="Orientation"></div>
+				</div> 
+		</div>
+	</body>
 </html>
