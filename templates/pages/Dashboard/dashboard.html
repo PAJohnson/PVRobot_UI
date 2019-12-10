@@ -40,12 +40,12 @@
 				function update_fcn(){
 					update_dash();
 					
-					fetch("/dash/connection.json")
+					fetch("/dash/connection.json")//this is a request to flask
 					.then(response => response.json())
 					.then(response => {
 						connection = response;
 						console.log("in " + data);
-					})
+					})//end of fetch to flask
 					
 					fetch("/dash/battery.json")
 					.then(response => response.json())
