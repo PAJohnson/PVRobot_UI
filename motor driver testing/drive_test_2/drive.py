@@ -10,7 +10,7 @@ curses.noecho()
 stdscr.keypad(1)
 stdscr.timeout(200)
 
-stdscr.addstr(0,10,"Hit 'q' to quit")
+stdscr.addstr(0,10,"Hit q to quit")
 stdscr.refresh()
 
 key = ''
@@ -18,21 +18,29 @@ key = ''
 ser = []
 
 try:
-	ser.append(serial.Serial('COM10', 9600, timeout=1))
+	ser.append(serial.Serial('COM4', 9600, timeout=1))
+	print("Connected 1")
 except:
-	pass
+        print("Not Connected")
+        pass
 try:
-	ser.append(serial.Serial('COM11', 9600, timeout=1))
+	ser.append(serial.Serial('COM5', 9600, timeout=1))
+	print("Connected 2")
 except:
-	pass
+        print("Not Connected")
+        pass
 try:
-	ser.append(serial.Serial('COM12', 9600, timeout=1))
+	ser.append(serial.Serial('COM9', 9600, timeout=1))
+	print("Connected 3")
 except:
-	pass
+        print("Not Connected")
+        pass
 try:
-	ser.append(serial.Serial('COM13', 9600, timeout=1))
+        ser.append(serial.Serial('COM10', 9600, timeout=1))
+        print("Connected 4")
 except:
-	pass
+        print("Not Connected")
+        pass
 
 def forward(ser):
 	for i in range(len(ser)):
